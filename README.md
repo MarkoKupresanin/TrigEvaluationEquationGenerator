@@ -2,7 +2,7 @@
 
 ### This project intends to create unique trigonometric equations that vary with degree and radian values. 
 
-## "Customization"
+## "Customization Options"
 
 #### To change window size:
 > ``root.geometry("480x260")`` 
