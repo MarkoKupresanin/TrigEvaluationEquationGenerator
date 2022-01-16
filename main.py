@@ -4,7 +4,7 @@ from tkinter import *
 
 
 
-class MyFirstGUI:
+class appWindow:
     def __init__(self, master):
         self.master = master
         master.title("Trigonometric Evaluation Equation Generator")
@@ -53,7 +53,7 @@ class MyFirstGUI:
 
 
 root = Tk()
-my_gui = MyFirstGUI(root)
+my_gui = appWindow(root)
 theEquation=my_gui.createQuestion()
 root.geometry("460x230")
 root.resizable(width=False, height=False)
