@@ -41,7 +41,7 @@ class appWindow:
         if degOrRad == 1:
             randomFunction=random.choice(functions)
             randomDegree=random.choice(deg_angles)
-            text=randomFunction+" "+str(randomDegree)+str("º")
+            text=randomFunction+" "+str(randomDegree)+str("°")
             return text
         elif degOrRad ==2:
             randomFunction=random.choice(functions)
