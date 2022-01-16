@@ -53,8 +53,8 @@ class appWindow:
 
 
 root = Tk()
-my_gui = appWindow(root)
-theEquation=my_gui.createQuestion()
+app = appWindow(root)
+theEquation=app.createQuestion()
 root.geometry("460x230")
 root.resizable(width=False, height=False)
 root.mainloop()
