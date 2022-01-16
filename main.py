@@ -5,26 +5,33 @@ from tkinter import *
 
 
 class appWindow:
-    def __init__(self, master):
+    def __init__(self, master, appFont="Arial", equationFont="Courier"):
         self.master = master
+        self.appFont=appFont
+        self.equationFont=equationFont
         master.title("Trigonometric Evaluation Equation Generator")
 
         self.makeQuestion_button = Button(master, text="Generate Question", highlightbackground="lime",command=self.reloadQuestion, height=3)
+        self.makeQuestion_button.config(font=(appFont,20))
 
         self.label = Label(master, text="Equation:")
-        self.blankSpace= Label(master, text="")
-        self.label.config(font=("Courier",24))
+        self.blankSpace1= Label(master, text="")
+        self.blankSpace2= Label(master, text="")
+        self.label.config(font=(appFont,24))
 
         self.equationText = Label(master,text="")
-        self.equationText.config(font=("Courier",44))
+        self.equationText.config(font=(equationFont,44))
 
 
         self.close_button = Button(master, text="Close",highlightbackground="red", command=master.quit,bg="red", border=2)
+        self.close_button.config(font=(appFont,20))
+
 
         self.label.pack()
-        self.equationText.pack()        
+        self.equationText.pack()
+        self.blankSpace1.pack()  
         self.makeQuestion_button.pack()
-        self.blankSpace.pack()
+        self.blankSpace2.pack()
         self.close_button.pack()
 
     def createQuestion(self):
@@ -53,8 +60,8 @@ class appWindow:
 
 
 root = Tk()
-app = appWindow(root)
+app= appWindow(root, "Times New Roman", "Courier")
 theEquation=app.createQuestion()
-root.geometry("460x230")
+root.geometry("480x260")
 root.resizable(width=False, height=False)
 root.mainloop()
