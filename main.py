@@ -2,8 +2,6 @@ import os
 import random
 from tkinter import *
 
-
-
 class appWindow:
     def __init__(self, master, appFont="Arial", equationFont="Courier"):
         self.master = master
@@ -15,25 +13,25 @@ class appWindow:
         self.makeQuestion_button.config(font=(appFont,20))
 
         self.label = Label(master, text="Equation:")
-        self.blankSpace1= Label(master, text="")
-        self.blankSpace2= Label(master, text="")
         self.label.config(font=(appFont,24))
 
         self.equationText = Label(master,text="")
         self.equationText.config(font=(equationFont,44))
 
-
         self.close_button = Button(master, text="Close",highlightbackground="red", command=master.quit,bg="red", border=2)
         self.close_button.config(font=(appFont,20))
 
-
+        self.blankSpace1= Label(master, text="")
+        self.blankSpace2= Label(master, text="")
+        
+        # Adding all elements to window
         self.label.pack()
         self.equationText.pack()
         self.blankSpace1.pack()  
         self.makeQuestion_button.pack()
         self.blankSpace2.pack()
         self.close_button.pack()
-
+        
     def createQuestion(self):
         functions = ["sin", "cos", "tan", "cot", "sec", "csc"]
         deg_angles = [0,30,60,90,120,135,150,180,210,225,240,270,300,315,330,360]
@@ -54,6 +52,7 @@ class appWindow:
             return "An error has occured"
 
     def reloadQuestion(self):
+        # Creating global variable in order to modify the variable outside the current scope (when initalizing the app)
         global theEquation
         theEquation=self.createQuestion()
         self.equationText.config(text=theEquation)
