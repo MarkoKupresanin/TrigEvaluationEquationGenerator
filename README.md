@@ -20,5 +20,9 @@
 > The default font is Courier for the equation, and Arial for the buttons/labels. However they can be overidden by passing in another font in the app initialization. (You need to have the font installed on your machine for this to work)
 
 #### Choosing Radians and Degrees:
-> ``app= appWindow(root, appFont, equationFont, angleChoice)``
+> ``app= appWindow(root, appFont, equationFont, angleChoice, signChoice)``
 > You may pass in "rad" into ``angleChoice`` to only get problems in radians, "deg" to only get problems in degrees, or "both" to get problems in radians and degrees. (Defaults to radians)
+
+#### Choosing the sign of the angle:
+> ``app= appWindow(root, appFont, equationFont, angleChoice, signChoice)``
+> You can pass in "pos" in to ``signChoice`` to get positive angles, "neg" to get negative angles, and "both" to get positive and negative angles. (Default is positive)
